@@ -5,7 +5,7 @@ import android.content.Context;
 import com.app.customers.app.di.scopes.MainScope;
 import com.app.customers.data.api.retrofit.RetrofitFetchCustomers;
 import com.app.customers.data.repository.CustomersRepository;
-import com.app.customers.domain.GetCustomers;
+import com.app.customers.domain.getQudiniInfo.GetCustomers;
 import com.app.customers.executor.PostExecutionThread;
 import com.app.customers.executor.ThreadExecutor;
 import com.app.customers.ui.presenters.MainPresenter;

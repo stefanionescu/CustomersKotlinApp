@@ -2,11 +2,11 @@ package com.app.customers.data.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Customer implements Parcelable
+public class QudiniCustomer implements Parcelable
 {
 
     @SerializedName("bookingRef")
@@ -66,24 +66,24 @@ public class Customer implements Parcelable
     @SerializedName("unreadMessages")
     @Expose
     private int unreadMessages;
-    public final static Parcelable.Creator<Customer> CREATOR = new Creator<Customer>() {
+    public final static Parcelable.Creator<QudiniCustomer> CREATOR = new Creator<QudiniCustomer>() {
 
 
         @SuppressWarnings({
                 "unchecked"
         })
-        public Customer createFromParcel(Parcel in) {
-            return new Customer(in);
+        public QudiniCustomer createFromParcel(Parcel in) {
+            return new QudiniCustomer(in);
         }
 
-        public Customer[] newArray(int size) {
-            return (new Customer[size]);
+        public QudiniCustomer[] newArray(int size) {
+            return (new QudiniCustomer[size]);
         }
 
     }
             ;
 
-    protected Customer(Parcel in) {
+    protected QudiniCustomer(Parcel in) {
         this.bookingRef = ((String) in.readValue((String.class.getClassLoader())));
         this.createdBy = ((CreatedBy) in.readValue((CreatedBy.class.getClassLoader())));
         this.customerProfile = ((Object) in.readValue((Object.class.getClassLoader())));
@@ -109,7 +109,7 @@ public class Customer implements Parcelable
      * No args constructor for use in serialization
      *
      */
-    public Customer() {
+    public QudiniCustomer() {
     }
 
     /**
@@ -134,7 +134,7 @@ public class Customer implements Parcelable
      * @param firstName
      * @param mobileNumber
      */
-    public Customer(String bookingRef, CreatedBy createdBy, Object customerProfile, String emailAddress, String firstName, int id, Object isInMultipleQueue, Language language, MerchantCustomer merchantCustomer, Object mobileNetwork, String mobileNumber, String name, String notes, String numberCountryCode, Object orderNumber, Object pagerNumber, String surname, String ticketNumber, int unreadMessages) {
+    public QudiniCustomer(String bookingRef, CreatedBy createdBy, Object customerProfile, String emailAddress, String firstName, int id, Object isInMultipleQueue, Language language, MerchantCustomer merchantCustomer, Object mobileNetwork, String mobileNumber, String name, String notes, String numberCountryCode, Object orderNumber, Object pagerNumber, String surname, String ticketNumber, int unreadMessages) {
         super();
         this.bookingRef = bookingRef;
         this.createdBy = createdBy;

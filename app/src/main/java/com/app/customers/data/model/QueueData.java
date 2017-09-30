@@ -85,21 +85,6 @@ public class QueueData implements Parcelable
     public QueueData() {
     }
 
-    /**
-     *
-     * @param isActive
-     * @param queueLengthBooked
-     * @param queue
-     * @param isMyLastCustomer
-     * @param staffTotal
-     * @param serversAvailable
-     * @param customerServed
-     * @param queueLength
-     * @param staffAvailable
-     * @param queueLengthNonBooked
-     * @param minutesToNextFree
-     * @param currentUserRole
-     */
     public QueueData(String currentUserRole, Object customerServed, boolean isActive, boolean isMyLastCustomer, int minutesToNextFree, Queue queue, int queueLength, int queueLengthBooked, int queueLengthNonBooked, List<ServersAvailable> serversAvailable, int staffAvailable, int staffTotal) {
         super();
         this.currentUserRole = currentUserRole;

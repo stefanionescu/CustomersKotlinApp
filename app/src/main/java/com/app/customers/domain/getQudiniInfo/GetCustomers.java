@@ -1,9 +1,11 @@
-package com.app.customers.domain;
+package com.app.customers.domain.getQudiniInfo;
 
 import android.content.Context;
+import android.util.Log;
 
-import com.app.customers.data.model.CustomersToday;
+import com.app.customers.data.model.QudiniCustomersToday;
 import com.app.customers.data.repository.CustomersRepository;
+import com.app.customers.domain.model.Customer;
 import com.app.customers.executor.PostExecutionThread;
 import com.app.customers.executor.ThreadExecutor;
 import com.app.customers.executor.UseCaseObservable;
@@ -11,13 +13,12 @@ import com.app.customers.executor.UseCaseObservable;
 import java.util.List;
 
 import io.reactivex.Observable;
-import okhttp3.OkHttpClient;
 
 /**
  * Created by Stefan
  */
 
-public class GetCustomers extends UseCaseObservable<List<CustomersToday>, Void>{
+public class GetCustomers extends UseCaseObservable<List<Customer>, Void>{
 
     private Context context;
 
@@ -37,13 +38,13 @@ public class GetCustomers extends UseCaseObservable<List<CustomersToday>, Void>{
     }
 
     @Override
-    public Observable<List<CustomersToday>> buildUseCaseObservable(Void aVoid) {
+    public Observable<List<Customer>> buildUseCaseObservable(Void aVoid) {
 
-        List<CustomersToday> customers = customersRepository.getForecastsCollection();
+        List<QudiniCustomersToday> customers = customersRepository.getForecastsCollection();
 
+        Log.e("customers", "Got customers");
 
-
-        return Observable.just(customers);
+        return Observable.just(new ModelTransformer(customers).getCustomers());
 
     }
 

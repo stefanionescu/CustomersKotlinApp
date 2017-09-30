@@ -1,11 +1,11 @@
 package com.app.customers.ui.views
 
-import com.app.customers.data.model.CustomersList
+import com.app.customers.domain.model.Customer
 
 interface MainView : View {
 
     fun showToast(s: String)
 
-    fun showCustomersList(o: CustomersList)
+    fun showCustomers(l: List<Customer>)
 
 }

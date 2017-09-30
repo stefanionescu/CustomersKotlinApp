@@ -8,10 +8,14 @@ import android.widget.Toast;
 import com.app.customers.R;
 import com.app.customers.app.di.components.DaggerMainComponent;
 import com.app.customers.app.di.modules.MainActivityModule;
-import com.app.customers.data.model.CustomersList;
+import com.app.customers.data.model.QudiniCustomersList;
+import com.app.customers.domain.model.Customer;
+import com.app.customers.ui.adapters.CustomerAdapter;
 import com.app.customers.ui.customViews.ClickRecyclerView;
 import com.app.customers.ui.presenters.MainPresenter;
 import com.app.customers.ui.views.MainView;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -75,16 +79,14 @@ public class MainActivity extends AppCompatActivity implements MainView{
     @Override
     public void showToast(String s) {
 
-        Log.e("retrofit", s);
-
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
 
     }
 
     @Override
-    public void showCustomersList(CustomersList o) {
+    public void showCustomers(List<Customer> customers) {
 
-
+        customersList.setAdapter(new CustomerAdapter(customers));
 
     }
 }

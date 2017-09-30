@@ -4,7 +4,6 @@ import java.util.List;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -71,9 +70,9 @@ public class Queue implements Parcelable {
     @SerializedName("customerTimings")
     @Expose
     private String customerTimings;
-    @SerializedName("customersToday")
+    @SerializedName("qudiniCustomersToday")
     @Expose
-    private List<CustomersToday> customersToday = null;
+    private List<QudiniCustomersToday> qudiniCustomersToday = null;
     @SerializedName("finishReminder")
     @Expose
     private boolean finishReminder;
@@ -253,7 +252,7 @@ public class Queue implements Parcelable {
         this.customerPostcodeRequired = ((boolean) in.readValue((boolean.class.getClassLoader())));
         this.customerSurnameRequired = ((boolean) in.readValue((boolean.class.getClassLoader())));
         this.customerTimings = ((String) in.readValue((String.class.getClassLoader())));
-        in.readList(this.customersToday, (com.app.customers.data.model.CustomersToday.class.getClassLoader()));
+        in.readList(this.qudiniCustomersToday, (QudiniCustomersToday.class.getClassLoader()));
         this.finishReminder = ((boolean) in.readValue((boolean.class.getClassLoader())));
         this.forceAdvisorToReportOutcome = ((boolean) in.readValue((boolean.class.getClassLoader())));
         this.id = ((int) in.readValue((int.class.getClassLoader())));
@@ -309,7 +308,7 @@ public class Queue implements Parcelable {
     public Queue() {
     }
 
-    public Queue(int advanceBookingsMinutes, int advanceBookingsWeeks, boolean advisorCannotChooseCustomer, boolean allowedToToggleCustomerDescriptionOption, boolean applyTicketNumber, int averageServeTimeMinutes, int bookingStart, String bookingTimings, int bufferSpace, boolean captureOrderNumber, boolean clearQueueOvernight, Object colour, boolean conciergeAcceptReject, boolean customerDescriptionEnabled, boolean customerEmailRequired, boolean customerNameRequired, boolean customerNameRequiredKiosk, boolean customerPostcodeRequired, boolean customerSurnameRequired, String customerTimings, List<CustomersToday> customersToday, boolean finishReminder, boolean forceAdvisorToReportOutcome, int id, String identifier, boolean isBookingAllowed, boolean isRestaurant, boolean isRetainTicketNumber, boolean isTabletCollectionEnabled, boolean isWalkinAllowed, Object maxQueueLength, Object minWaitTimeMinutes, String name, boolean numberWithDuplicatedNameKiosk, boolean outcomeReportingBooking, boolean outcomeReportingWalkin, boolean outcomesEnabled, boolean pagerRequired, int queueMessagesThresholdMinutes, int queueMessagesThresholdPosition, boolean rejectReasonAllowFreeText, List<Object> rejectReasons, boolean removeCustomerEnabled, Object removeCustomerHours, Object removeCustomerMins, Object removeCustomerMinutes, boolean requestOutcomeAdvisors, boolean requestOutcomeConcierge, boolean requiredMpn, int secondsAcceptReject, boolean serverAcceptReject, boolean serverAllowedBreak, boolean serverCannotViewProducts, List<Server> servers, List<Object> servingServers, boolean showAllUncollected, boolean showAssignedCustomerPopup, boolean skipJoinMessage, List<Object> smsLanguagesEnabled, boolean smsRestricted, String snsTopicArn, int staffBookingAvailability, String staffTimings, List<Object> tagSelectionList, List<Object> tags, String ticketNumberTag, int unreadMessagesForQueue, Venue venue) {
+    public Queue(int advanceBookingsMinutes, int advanceBookingsWeeks, boolean advisorCannotChooseCustomer, boolean allowedToToggleCustomerDescriptionOption, boolean applyTicketNumber, int averageServeTimeMinutes, int bookingStart, String bookingTimings, int bufferSpace, boolean captureOrderNumber, boolean clearQueueOvernight, Object colour, boolean conciergeAcceptReject, boolean customerDescriptionEnabled, boolean customerEmailRequired, boolean customerNameRequired, boolean customerNameRequiredKiosk, boolean customerPostcodeRequired, boolean customerSurnameRequired, String customerTimings, List<QudiniCustomersToday> qudiniCustomersToday, boolean finishReminder, boolean forceAdvisorToReportOutcome, int id, String identifier, boolean isBookingAllowed, boolean isRestaurant, boolean isRetainTicketNumber, boolean isTabletCollectionEnabled, boolean isWalkinAllowed, Object maxQueueLength, Object minWaitTimeMinutes, String name, boolean numberWithDuplicatedNameKiosk, boolean outcomeReportingBooking, boolean outcomeReportingWalkin, boolean outcomesEnabled, boolean pagerRequired, int queueMessagesThresholdMinutes, int queueMessagesThresholdPosition, boolean rejectReasonAllowFreeText, List<Object> rejectReasons, boolean removeCustomerEnabled, Object removeCustomerHours, Object removeCustomerMins, Object removeCustomerMinutes, boolean requestOutcomeAdvisors, boolean requestOutcomeConcierge, boolean requiredMpn, int secondsAcceptReject, boolean serverAcceptReject, boolean serverAllowedBreak, boolean serverCannotViewProducts, List<Server> servers, List<Object> servingServers, boolean showAllUncollected, boolean showAssignedCustomerPopup, boolean skipJoinMessage, List<Object> smsLanguagesEnabled, boolean smsRestricted, String snsTopicArn, int staffBookingAvailability, String staffTimings, List<Object> tagSelectionList, List<Object> tags, String ticketNumberTag, int unreadMessagesForQueue, Venue venue) {
         super();
         this.advanceBookingsMinutes = advanceBookingsMinutes;
         this.advanceBookingsWeeks = advanceBookingsWeeks;
@@ -331,7 +330,7 @@ public class Queue implements Parcelable {
         this.customerPostcodeRequired = customerPostcodeRequired;
         this.customerSurnameRequired = customerSurnameRequired;
         this.customerTimings = customerTimings;
-        this.customersToday = customersToday;
+        this.qudiniCustomersToday = qudiniCustomersToday;
         this.finishReminder = finishReminder;
         this.forceAdvisorToReportOutcome = forceAdvisorToReportOutcome;
         this.id = id;
@@ -541,12 +540,12 @@ public class Queue implements Parcelable {
         this.customerTimings = customerTimings;
     }
 
-    public List<CustomersToday> getCustomersToday() {
-        return customersToday;
+    public List<QudiniCustomersToday> getQudiniCustomersToday() {
+        return qudiniCustomersToday;
     }
 
-    public void setCustomersToday(List<CustomersToday> customersToday) {
-        this.customersToday = customersToday;
+    public void setQudiniCustomersToday(List<QudiniCustomersToday> qudiniCustomersToday) {
+        this.qudiniCustomersToday = qudiniCustomersToday;
     }
 
     public boolean isFinishReminder() {
@@ -946,7 +945,7 @@ public class Queue implements Parcelable {
         dest.writeValue(customerPostcodeRequired);
         dest.writeValue(customerSurnameRequired);
         dest.writeValue(customerTimings);
-        dest.writeList(customersToday);
+        dest.writeList(qudiniCustomersToday);
         dest.writeValue(finishReminder);
         dest.writeValue(forceAdvisorToReportOutcome);
         dest.writeValue(id);

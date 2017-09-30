@@ -2,8 +2,9 @@ package com.app.customers.ui.presenters;
 
 import android.content.Context;
 
-import com.app.customers.data.model.CustomersToday;
-import com.app.customers.domain.GetCustomers;
+import com.app.customers.data.model.QudiniCustomersToday;
+import com.app.customers.domain.getQudiniInfo.GetCustomers;
+import com.app.customers.domain.model.Customer;
 import com.app.customers.executor.reactive.DefaultObserver;
 import com.app.customers.ui.views.MainView;
 
@@ -67,7 +68,7 @@ public class MainPresenterImp implements MainPresenter{
 
     }
 
-    private final class UserListObserver extends DefaultObserver<List<CustomersToday>> {
+    private final class UserListObserver extends DefaultObserver<List<Customer>> {
 
         @Override
         public void onComplete() {
@@ -76,13 +77,14 @@ public class MainPresenterImp implements MainPresenter{
         @Override
         public void onError(Throwable e) {
 
-
-
         }
 
         @Override
-        public void onNext(List<CustomersToday> customers) {
+        public void onNext(List<Customer> customers) {
 
+            if (customers != null)
+
+            view.showCustomers(customers);
 
         }
     }
