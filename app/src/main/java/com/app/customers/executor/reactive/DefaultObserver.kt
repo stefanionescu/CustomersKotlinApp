@@ -5,7 +5,7 @@ import io.reactivex.observers.DisposableObserver
 /**
  * Default [DisposableObserver] base class to be used whenever you want default error handling.
  */
-class DefaultObserver<T> : DisposableObserver<T>() {
+open class DefaultObserver<T> : DisposableObserver<T>() {
     override fun onNext(t: T) {
         // no-op by default.
     }

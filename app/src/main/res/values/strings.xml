@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">CustomersApp</string>
+    
+    <string name="app_name">Customers App</string>
+    
+    <string name="api_address">https://app.qudini.com</string>
+    
+    <string name="user">codetest1</string>
+    
+    <string name="pass">codetest100</string>
+
+    <string name="gravatar_api">https://en.gravatar.com/site/implement/images/</string>
+    
 </resources>

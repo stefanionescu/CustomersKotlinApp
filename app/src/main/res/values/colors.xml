@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <item name="model_card_footer_background" type="color">#58000000</item>
+    <item name="model_card_footer_text" type="color">#FFF</item>
+
 </resources>
