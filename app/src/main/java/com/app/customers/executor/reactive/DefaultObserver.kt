@@ -1,5 +1,6 @@
 package com.app.customers.executor.reactive
 
+import com.app.customers.domain.model.Customer
 import io.reactivex.observers.DisposableObserver
 
 /**

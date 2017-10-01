@@ -3,6 +3,7 @@ package com.app.customers.domain.getQudiniInfo
 import com.app.customers.data.model.QudiniCustomersToday
 import com.app.customers.domain.model.Customer
 
+import java.util.ArrayList
 import java.util.Collections
 import java.util.Comparator
 
@@ -12,19 +13,19 @@ import java.util.Comparator
 
 class ModelTransformer(private val qudiniCustomers: List<QudiniCustomersToday>) {
 
-    private val customers: MutableList<Customer>? = null
+    private val customers = ArrayList<Customer>()
 
     fun getCustomers(): List<Customer> {
 
         for (i in qudiniCustomers.indices) {
 
-            customers!!.add(Customer(qudiniCustomers[i].qudiniCustomer!!.emailAddress!!,
-                    qudiniCustomers[i].qudiniCustomer!!.name!!,
-                    Integer.parseInt(qudiniCustomers[i].expectedTime)))
+            customers.add(Customer(qudiniCustomers[i].customer!!.emailAddress,
+                    qudiniCustomers[i].customer!!.name,
+                    qudiniCustomers[i].expectedTime))
 
         }
 
-        Collections.sort(customers!!, CustomerComparator())
+        Collections.sort(customers, CustomerComparator())
 
         return customers
 
@@ -32,7 +33,7 @@ class ModelTransformer(private val qudiniCustomers: List<QudiniCustomersToday>) 
 
     inner class CustomerComparator : Comparator<Customer> {
         override fun compare(o1: Customer, o2: Customer): Int {
-            return o1.expectedTime - o2.expectedTime
+            return o1.expectedTime!!.compareTo(o2.expectedTime!!)
         }
     }
 
