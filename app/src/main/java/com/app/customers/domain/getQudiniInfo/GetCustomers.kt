@@ -23,7 +23,7 @@ class GetCustomers(threadExecutor: ThreadExecutor,
 
     override fun buildUseCaseObservable(params: Void?): Observable<List<Customer>> {
 
-        val qudiniCustomers = customersRepository.forecastsCollection
+        val qudiniCustomers = customersRepository.customersList
 
         return Observable.just(ModelTransformer(qudiniCustomers
                 .queueData!!

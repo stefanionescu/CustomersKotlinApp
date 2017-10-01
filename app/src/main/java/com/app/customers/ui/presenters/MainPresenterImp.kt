@@ -71,6 +71,7 @@ constructor(internal var context: Context,
                 view!!.showCustomers(customers)
 
         }
+
     }
 
     private fun initTimerTask() {
